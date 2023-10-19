@@ -1,0 +1,133 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="au theme template">
+    <meta name="author" content="Hau Nguyen">
+    <meta name="keywords" content="au theme template">
+
+    <!-- Title Page-->
+    <title>MADO | Admin</title>
+    <link rel="icon" type="image/x-icon" href="/Themes/AdminTheme/images/icon/mado_icon.jpg">
+
+    <!-- Fontfaces CSS-->
+    <link href="/Themes/AdminTheme/css/font-face.css" rel="stylesheet" media="all">
+    <link href="/Themes/AdminTheme/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <link href="/Themes/AdminTheme/vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
+    <link href="/Themes/AdminTheme/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+
+    @*mako*@
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+
+    <!-- Bootstrap CSS-->
+    <link href="/Themes/AdminTheme/vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
+
+    <!-- Vendor CSS-->
+    <link href="/Themes/AdminTheme/vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
+    <link href="/Themes/AdminTheme/vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all">
+    <link href="/Themes/AdminTheme/vendor/wow/animate.css" rel="stylesheet" media="all">
+    <link href="/Themes/AdminTheme/vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
+    <link href="/Themes/AdminTheme/vendor/slick/slick.css" rel="stylesheet" media="all">
+    <link href="/Themes/AdminTheme/vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="/Themes/AdminTheme/vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <link href="/Themes/AdminTheme/css/theme.css" rel="stylesheet" media="all">
+
+</head>
+
+<body class="animsition">
+
+    <div class="page-wrapper">
+
+        <!-- MENU SIDEBAR-->
+        <aside class="menu-sidebar d-none d-lg-block">
+            <div class="logo">
+                <a href="#">
+                    <img src="/Themes/AdminTheme/images/icon/logo.png" style=" max-width: 70%; height: auto;" />
+                </a>
+            </div>
+            <div class="menu-sidebar__content js-scrollbar1">
+                <nav class="navbar-sidebar">
+                    <ul class="list-unstyled navbar__list">
+
+                        <li class="has-sub">
+                            <a class="js-arrow" href="~/Admin/Categories">
+                                <i class="fa-solid fa-list"></i>Categories
+                            </a>
+                        </li>
+
+                        <li class="has-sub">
+                            <a class="js-arrow" href="~/Admin/Foods">
+                                <i class="fa-solid fa-utensils"></i>Foods
+                            </a>
+                        </li>
+
+                        <li class="has-sub">
+                            <a class="js-arrow" href="~/Menu/Index">
+                                <i class="fa-solid fa-globe"></i>Go Page
+                            </a>
+                        </li>
+
+                        <li class="has-sub">
+                            <a class="js-arrow" href="~/Admin/Logout">
+                                <i class="fa-solid fa-power-off"></i>Logout
+                            </a>
+                        </li>
+
+                    </ul>
+                </nav>
+            </div>
+        </aside>
+        <!-- END MENU SIDEBAR-->
+        <!-- PAGE CONTAINER-->
+        <div class="page-container">
+
+            <div class="main-content" style="padding-top:30px;">
+                <div class="section__content section__content--p30">
+
+                    @RenderBody()
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Jquery JS-->
+    <script src="/Themes/AdminTheme/vendor/jquery-3.2.1.min.js"></script>
+    <!-- Bootstrap JS-->
+    <script src="/Themes/AdminTheme/vendor/bootstrap-4.1/popper.min.js"></script>
+    <script src="/Themes/AdminTheme/vendor/bootstrap-4.1/bootstrap.min.js"></script>
+    <!-- Vendor JS       -->
+    <script src="/Themes/AdminTheme/vendor/slick/slick.min.js">
+    </script>
+    <script src="/Themes/AdminTheme/vendor/wow/wow.min.js"></script>
+        <script src="/Themes/AdminTheme/vendor/animsition/animsition.min.js"></script>
+    <script src="/Themes/AdminTheme/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js">
+    </script>
+    <script src="/Themes/AdminTheme/vendor/counter-up/jquery.waypoints.min.js"></script>
+    <script src="/Themes/AdminTheme/vendor/counter-up/jquery.counterup.min.js">
+    </script>
+    <script src="/Themes/AdminTheme/vendor/circle-progress/circle-progress.min.js"></script>
+    <script src="/Themes/AdminTheme/vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <script src="/Themes/AdminTheme/vendor/chartjs/Chart.bundle.min.js"></script>
+    <script src="/Themes/AdminTheme/vendor/select2/select2.min.js">
+    </script>
+
+    <!-- Main JS-->
+    <script src="/Themes/AdminTheme/js/main.js"></script>
+
+    @*mako*@
+
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+</body>
+
+</html>
+<!-- end document-->

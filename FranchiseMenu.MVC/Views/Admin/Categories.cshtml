@@ -1,0 +1,79 @@
+﻿@using FranchiseMenu.ENTITY.Dtos.CategoryDtos
+@model List<CategoryGetAllDto>
+
+@{
+    ViewData["Title"] = "Categories";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="col-lg-6 ">
+    <div class="card">
+        <div class="card-body">
+            <div class="card-title">
+                <h3 class="text-center title-2">Category Add</h3>
+            </div>
+            <hr>
+
+            <form method="post">
+
+                <div class="form-group">
+                    <label for="cc-payment" class="control-label mb-1">Category Name</label>
+                    <input id="cc-pament" name="CategoryName" type="text" class="form-control" aria-required="true" aria-invalid="false">
+                </div>
+
+                <div>
+                    <button id="payment-button" type="submit" class="btn btn-lg btn-info btn-block" style="background-color:#222c61;">
+                        <span id="payment-button-amount">Add</span>
+                        <span id="payment-button-sending" style="display:none;">Sending…</span>
+                    </button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+<br />
+<br />
+
+<div class="col-lg-6">
+    <div>
+        <table class="table table-borderless table-striped table-earning ">
+
+            <thead>
+
+                <tr>
+                    <th class="text-left">Category Name</th>
+                    <th class="text-left">Status</th>
+                    <th class="text-left">Delete</th>
+                </tr>
+
+            </thead>
+            <tbody>
+
+                @foreach (var i in Model)
+                {
+                    <tr>
+                        <td>@i.CategoryName</td>
+                        @if (i.CategoryStatus == true)
+                        {
+                            <td>
+                                <a href="/Admin/ChangeStatusCategory/@i.Id/" class="btn btn-success"><i class="fa-solid fa-toggle-on"></i></a>
+                            </td>
+                        }
+                        else
+                        {
+                            <td>
+                                <a href="/Admin/ChangeStatusCategory/@i.Id/" class="btn btn-danger"><i class="fa-solid fa-toggle-off"></i></a>
+                            </td>
+                        }
+
+                        <td><a href="/Admin/DeleteCategory/@i.Id/" class="btn btn-danger"><i class="fa-regular fa-trash-can"></i></a></td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+</div>
+<br />
+<br />

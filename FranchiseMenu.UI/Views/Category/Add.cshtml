@@ -1,0 +1,43 @@
+﻿@using FranchiseMenu.ENTITY.Dtos.CategoryDtos;
+@model CategoryAddDto
+@{
+    ViewData["Title"] = "Add Category";
+    Layout = "~/Views/Shared/PanelLayout.cshtml";
+}
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+<div class="container-fluid">
+    <h1 class="h3 mb-2 text-gray-800">Add Category</h1>
+    <div class="card shadow mb-4">
+        <div class="card-body">
+            <div class="table-responsive">
+
+
+                <form method="post">
+
+                    <div class="form-group">
+                        <label>Category Name</label>
+                        <input type="text" class="form-control" name="CategoryName">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Category Description</label>
+                        <input type="text" class="form-control" name="CategoryDescription">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" id="btn-add">Add</button>
+
+
+                    <script>
+                        $('#btn-add').click(function(){
+                            swal(@ViewBag.Message);
+                        });
+                    </script>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+

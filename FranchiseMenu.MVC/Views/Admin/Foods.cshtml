@@ -1,0 +1,125 @@
+﻿@using FranchiseMenu.ENTITY.Dtos.FoodDtos
+@model List<FoodGetAllDto>
+@{
+    ViewData["Title"] = "Foods";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="col-lg-6">
+    <div>
+        <table class="table table-borderless table-striped table-earning ">
+
+            <thead>
+
+                <tr>
+                    <th class="text-left">Food Name</th>
+                    <th class="text-left">Description</th>
+                    <th class="text-left">Category</th>
+                    <th class="text-left">Status</th>
+                    <th class="text-left">Delete</th>
+                </tr>
+
+            </thead>
+            <tbody>
+
+                @foreach (var i in Model)
+                {
+                    <tr>
+                        <td>@i.FoodName</td>
+                        <td>@i.FoodDescription</td>
+                        <td>@i.CategoryName</td>
+                        @if (i.FoodStatus == true)
+                        {
+                            <td>
+                                <a href="/Admin/ChangeStatusFood/@i.Id/" class="btn btn-success"><i class="fa-solid fa-toggle-on"></i></a>
+                            </td>
+                        }
+                        else
+                        {
+                            <td>
+                                <a href="/Admin/ChangeStatusFood/@i.Id/" class="btn btn-danger"><i class="fa-solid fa-toggle-off"></i></a>
+                            </td>
+                        }
+
+                        <td><a href="/Admin/DeleteFood/@i.Id/" class="btn btn-danger"><i class="fa-regular fa-trash-can"></i></a></td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+</div>
+<br />
+<br />
+<form method="post">
+    <div class="col-lg-6">
+        <div class="card">
+            <div class="card-header">
+                <strong>Add Food</strong>
+            </div>
+
+            <div class="card-body card-block">
+
+
+                <div class="row form-group">
+                    <div class="col col-md-3">
+                        <label for="text-input" class=" form-control-label">Food Name</label>
+                    </div>
+                    <div class="col-12 col-md-9">
+                        <input type="text" id="text-input" name="FoodName" class="form-control">
+                    </div>
+                </div>
+
+                <div class="row form-group">
+                    <div class="col col-md-3">
+                        <label for="text-input" class=" form-control-label">Food Description</label>
+                    </div>
+                    <div class="col-12 col-md-9">
+                        <textarea name="FoodDescription" class="form-control"></textarea>
+                    </div>
+                </div>
+
+                <div class="row form-group">
+                    <div class="col col-md-3">
+                        <label for="select" class=" form-control-label">Category</label>
+                    </div>
+                    @{
+                        using (var context = new FranchiseMenu.DAL.Concrete.EntityFramework.FranchiseMenuContext())
+                        {
+                            var list = context.Categories.Where(x => x.CategoryStatus == true).ToList();
+
+                            <div class="col-12 col-md-9">
+                                <select name="CategoryName" id="select" class="form-control">
+                                    @foreach (var item in list)
+                                    {
+                                        <option value="@item.CategoryName">@item.CategoryName</option>
+                                    }
+                                </select>
+                            </div>
+
+                        }
+                    }
+                </div>
+
+                <div class="row form-group">
+                    <div class="col col-md-3">
+                        <label for="text-input" class=" form-control-label">Food Price</label>
+                    </div>
+                    <div class="col-12 col-md-9">
+                        <div class="input-group-addon">
+                            ₺<input type="text" name="FoodPrice" class="form-control">
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-primary btn-sm">
+                        <i class="fa fa-plus"></i> Add
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

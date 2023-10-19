@@ -1,0 +1,14 @@
+﻿@using FranchiseMenu.ENTITY.Dtos.FoodDtos
+@model List<FoodGetAllDto>
+
+@foreach (var i in Model)
+{
+    <div class="col-lg-6 menu-item filter-@i.CategoryId">
+        <div class="menu-content">
+            <a href="#" style="color:#092d74;">@i.FoodName</a><span>₺@i.FoodPrice</span>
+        </div>
+        <div class="menu-ingredients">
+            @i.FoodDescription
+        </div>
+    </div>
+}
